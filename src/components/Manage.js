@@ -9,7 +9,7 @@ const Manage = () => {
 
   useEffect( () => {
     if(daftarMovie === null){
-      axios.get(`http://backendexample.sanbercloud.com/api/movies`)
+      axios.get(`https://backendexample.sanbersy.com/api/movies`)
         .then(res => {
           console.log(res)
           console.log(res.data)
@@ -36,7 +36,7 @@ const Manage = () => {
 
     let newDaftarMovie = daftarMovie.filter(el => el.id != idMovie)
 
-    axios.delete(`http://backendexample.sanbercloud.com/api/movies/${idMovie}`)
+    axios.delete(`https://backendexample.sanbersy.com/api/movies/${idMovie}`)
     .then(res => {
       console.log(res)
     })
@@ -103,12 +103,12 @@ const Manage = () => {
 
     if (title.replace(/\s/g,'') !== "" && rating.replace(/\s/g,'') !== "" && duration .replace(/\s/g,'') !== "" && genre.replace(/\s/g,'') !== "" && year.replace(/\s/g,'') !== "" && description.replace(/\s/g,'') !== "" && image_url.replace(/\s/g,'') !== "") {
       if (statusForm === "create") {
-        axios.post(`http://backendexample.sanbercloud.com/api/movies`, {title, rating, duration, genre, year, description, image_url})
+        axios.post(`https://backendexample.sanbersy.com/api/movies`, {title, rating, duration, genre, year, description, image_url})
           .then(res => {
             setDaftarMovie([...daftarMovie, {id: res.data.id, title: title, rating: rating, duration: duration, genre: genre, year: year, description: description, image_url: image_url }])
           })
       } else if (statusForm === "edit") {
-        axios.put(`http://backendexample.sanbercloud.com/api/movies/${selectedId}`, {title: input.title, rating: input.rating, duration: input.duration, genre: input.genre, year: input.year, description: input.description, image_url: input.image_url})
+        axios.put(`https://backendexample.sanbersy.com/api/movies/${selectedId}`, {title: input.title, rating: input.rating, duration: input.duration, genre: input.genre, year: input.year, description: input.description, image_url: input.image_url})
           .then(res => {
             console.log(res)
             }
