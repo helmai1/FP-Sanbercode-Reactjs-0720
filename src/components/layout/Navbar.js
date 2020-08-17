@@ -42,8 +42,7 @@ const Navbar = () => {
                         <Link class="nav-link" to="/manage-games">Manage Games</Link>
                     </li>
                 </ul>
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><Link to="/manage-games">Login</Link></button>
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Register</button>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><Link to="/login">Login</Link></button>
             </div>
         </nav>
 

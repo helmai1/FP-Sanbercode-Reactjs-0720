@@ -82,136 +82,36 @@ const Login = () => {
         }
       }
     };
-    const useStyles = makeStyles((theme) => ({
-      root: {
-        "& .MuiTextField-root": {
-          margin: theme.spacing(1),
-          width: "25ch",
-        },
-        "& label.Mui-focused": {
-          color: "white",
-        },
-        "& .MuiInput-underline:after": {
-          borderBottomColor: "white",
-        },
-        "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-            borderColor: "white",
-          },
-          "&:hover fieldset": {
-            borderColor: "white",
-          },
-          "&.Mui-focused fieldset": {
-            borderColor: "white",
-          },
-        },
-      },
-      input: {
-        color: "white",
-      },
-      floatingLabelFocusStyle: {
-        color: "gray",
-      },
-    }));
-    const classes = useStyles();
   
     return (
       <>
-        <div className="content">
-          <h2>Login here!</h2>
-          <form
-            className="loginForm"
-            className={classes.root}
-            onSubmit={handleSubmit}
-          >
-            <label>Username: </label>
-            <TextField
-              InputLabelProps={{
-                className: classes.floatingLabelFocusStyle,
-              }}
-              InputProps={{
-                className: classes.input,
-              }}
-              color="white"
-              variant="outlined"
-              label="username"
-              type="text"
-              name="username"
-              onChange={handleChange}
-              value={input.username}
-            />
-            <br />
-            <label>Password: </label>
-            <TextField
-              InputLabelProps={{
-                className: classes.floatingLabelFocusStyle,
-              }}
-              InputProps={{
-                className: classes.input,
-              }}
-              variant="outlined"
-              label="password"
-              type="password"
-              name="password"
-              onChange={handleChange}
-              value={input.password}
-            />
-            <br />
-            <Button
-              variant="contained"
-              color="primary"
-              style={{ marginTop: "20px" }}
-              type="Submit"
-            >
-              Login
-            </Button>
+        <div className="container">
+          <h2>Login</h2>
+          <form className="loginForm" onSubmit={handleSubmit} >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input class="form-control" type="text" name="username" value={input.username} onChange={handleChange}/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input class="form-control" type="password" name="password" value={input.password} onChange={handleChange}/>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
           </form>
           <form
             className="makeAccount"
-            className={classes.root}
             onSubmit={handleCreate}
           >
-            <h2>Don't have any account yet? Make one here!</h2>
+            <h2>Register</h2>
+            <div class="form-group">
             <label>new Username: </label>
-            <TextField
-              InputLabelProps={{
-                className: classes.floatingLabelFocusStyle,
-              }}
-              InputProps={{
-                className: classes.input,
-              }}
-              label="new username"
-              variant="outlined"
-              type="text"
-              name="createUsername"
-              onChange={handleChange}
-              value={input.createUsername}
-            />
-            <br />
+            <input class="form-control" type="text" name="createUsername" value={input.createUsername} onChange={handleChange}/>
+            </div>
+            <div class="form-group">
             <label>new Password: </label>
-            <TextField
-              InputLabelProps={{
-                className: classes.floatingLabelFocusStyle,
-              }}
-              InputProps={{
-                className: classes.input,
-              }}
-              variant="outlined"
-              label="new password"
-              type="password"
-              name="createPassword"
-              onChange={handleChange}
-              value={input.createPassword}
-            />
-            <br />
-            <Button
-              variant="contained"
-              color="primary"
-              style={{ marginTop: "20px" }}
-              type="Submit"
-            >
-              Create Account
-            </Button>
+            <input class="form-control"  type="text" name="createPassword" value={input.createPassword} onChange={handleChange}/>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
           </form>
         </div>
       </>
