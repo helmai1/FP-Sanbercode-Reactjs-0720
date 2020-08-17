@@ -124,9 +124,10 @@ const Manage = () => {
 
   return (
     <React.Fragment>
-        <section>
-      <h1>Daftar Movie</h1>
-      <table>
+      <div className="container">
+      <section>
+      <h1 className="text-center">Daftar Movie</h1>
+      <table class="table table-bordered table-dark">
         <thead>
           <tr>
             <th>No</th>
@@ -151,16 +152,13 @@ const Manage = () => {
                     <td>{item.genre}</td>
                     <td style={{ textAlign: "center" }}>{item.rating}</td>
                     <td>
-                      <textarea disabled style={{ float: "right" }} type="text">
                         {item.description}
-                      </textarea>
                     </td>
                     <td>
                       {/* <button value={item.id}>Edit</button> */}
-                      <button onClick={handleEdit} value={item.id}>Edit</button>
-                      &nbsp;
+                      <button  className="btn btn-info" onClick={handleEdit} value={item.id}>Edit</button>
                       {/* <button value={item.id}>Delete</button> */}
-                      <button onClick={handleDelete} value={item.id}>Delete</button>
+                      <button  className="btn btn-danger" onClick={handleDelete} value={item.id}>Delete</button>
                     </td>
                   </tr>
                 )
@@ -169,14 +167,16 @@ const Manage = () => {
         </tbody>
       </table>
       {/* Form */}
-      <h1>Form Daftar Movie</h1>
+      <h1 className="text-center">Form Daftar Movie</h1>
       <div style={{width: "50%", margin: "0 auto", display: "block"}}>
         <div style={{border: "1px solid #aaa", padding: "20px"}}>
           {/* <form> */}
           <form onSubmit={handleSubmit}>
+            <div class="form-group">
             <label style={{float: "left"}}>Title:</label>
             {/* <input style={{float: "right"}} type="text" name="title"/> */}
             <input style={{float: "right"}} type="text" name="title" value={input.title} onChange={handleChange}/>
+            </div>
             <br/>
             <br/>
             <label style={{float: "left"}}>Year:</label>
@@ -213,12 +213,13 @@ const Manage = () => {
             <br/>
             <br/>
             <div style={{width: "100%", paddingBottom: "20px"}}>
-              <button style={{ float: "right"}}>submit</button>
+            <button type="submit" class="btn btn-primary" style={{ float: "right"}}>Submit</button>
             </div>
           </form>
         </div>
       </div>
       </section>
+      </div>
     </React.Fragment>
   )
 }

@@ -20,22 +20,23 @@ const MovieDetail = () => {
     }
   });
   return (
-    <>
+    <div className="container">
       {movie !== null && (
-        <div className="content">
-          <h1>{movie.title}</h1>
-          <img src={movie.image_url}></img>
-          <h2>Rating: {movie.rating}</h2>
-          <h2>Genre: {movie.genre}</h2>
-          <h2>Year: {movie.year}</h2>
-          <h2>Description: </h2>
-          <p>{movie.description}</p>
+        <div class="card mb-3 text-center">
+        <div class="text-center">
+        <img src={movie.image_url} class="card-img-top" alt="megumin"></img>
+        <div class="card-body">
+          <h2 className="card-title">{movie.title}</h2>
+          <p class="card-text">Genre : {movie.genre}</p>
+          <p class="card-text">Year: {movie.year}</p>
+          <p class="card-text">Dexription : {movie.description}</p>
+          <p class="card-text">Review : {movie.review}</p>
 
-          <h2>Review:</h2>
-          <p>{movie.review}</p>
+          </div>
+        </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

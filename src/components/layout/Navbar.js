@@ -13,7 +13,7 @@ import Game from '../Game';
 import GameDetail from '../detail-pages/GameDetail';
 import Manage from '../Manage';
 import Manage2 from '../Manage2';
-
+import Login from '../Login';
 
 const Navbar = () => {
     return(
@@ -42,7 +42,7 @@ const Navbar = () => {
                         <Link class="nav-link" to="/manage-games">Manage Games</Link>
                     </li>
                 </ul>
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Login</button>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><Link to="/manage-games">Login</Link></button>
                 <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Register</button>
             </div>
         </nav>
@@ -59,6 +59,9 @@ const Navbar = () => {
           </Route>
           <Route exact path="/manage-games">
             <Manage2 />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/movies/:id" component={MovieDetail} />
           <Route exact path="/games/:id" component={GameDetail} />

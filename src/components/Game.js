@@ -40,7 +40,7 @@ const Game = () => {
           games.map((el) => {
             return (
               <>
-                <div className="card">
+                <div className="card bg-dark mb-3">
                 <div class="text-center">
                 <div className="cardHead">
                     <Link className="detail" to={`/games/${el.id}`}>
@@ -49,10 +49,10 @@ const Game = () => {
                   </div>
                   <div className="judul">
                     <Link className="detail" to={`/games/${el.id}`}>
-                      <h2>{el.name}</h2>
+                      <h2 className="text-white">{el.name}</h2>
                     </Link>
 
-                    <h3>Platform : {el.platform}</h3>
+                    <h3 className="text-white">Platform : {el.platform}</h3>
                   </div>
                 </div>
                 </div>

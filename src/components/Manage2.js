@@ -124,9 +124,10 @@ const Manage2 = () => {
 
   return (
     <React.Fragment>
+      <div className="container">
         <section>
-      <h1>Daftar Game</h1>
-      <table>
+      <h1 className="text-center">Daftar Game</h1>
+      <table class="table table-bordered table-dark">
         <thead>
           <tr>
             <th>No</th>
@@ -149,10 +150,10 @@ const Manage2 = () => {
                     <td>{item.release}</td>   
                     <td>
                       {/* <button value={item.id}>Edit</button> */}
-                      <button onClick={handleEdit} value={item.id}>Edit</button>
+                      <button className="btn btn-info" onClick={handleEdit} value={item.id}>Edit</button>
                       &nbsp;
                       {/* <button value={item.id}>Delete</button> */}
-                      <button onClick={handleDelete} value={item.id}>Delete</button>
+                      <button className="btn btn-danger" onClick={handleDelete} value={item.id}>Delete</button>
                     </td>
                   </tr>
                 )
@@ -161,7 +162,7 @@ const Manage2 = () => {
         </tbody>
       </table>
       {/* Form */}
-      <h1>Form Daftar Game</h1>
+      <h1 className="text-center">Form Daftar Game</h1>
       <div style={{width: "50%", margin: "0 auto", display: "block"}}>
         <div style={{border: "1px solid #aaa", padding: "20px"}}>
           {/* <form> */}
@@ -203,12 +204,13 @@ const Manage2 = () => {
             <br/>
             <br/>
             <div style={{width: "100%", paddingBottom: "20px"}}>
-              <button style={{ float: "right"}}>submit</button>
+              <button type="submit" className="btn btn-primary" style={{ float: "right"}}>Submit</button>
             </div>
           </form>
         </div>
       </div>
       </section>
+      </div>
     </React.Fragment>
   )
 }

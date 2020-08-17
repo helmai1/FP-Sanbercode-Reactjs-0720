@@ -20,19 +20,24 @@ const GameDetail = () => {
     }
   });
   return (
-    <>
+    <div className="container">
       {game !== null && (
-        <div className="content">
-          <h1>{game.name}</h1>
-          <h2>Genre: {game.genre}</h2>
-          <h2>Single Player: {game.singlePlayer}</h2>
-          <h2>Multi Player: {game.multiPlayer}</h2>
-          <h2>Platform: {game.platform}</h2>
-
-          <h2>Release: {game.release}</h2>
+          
+          <div class="card mb-3 text-center">
+          <div class="text-center">
+          <img src={game.image_url} class="card-img-top" alt="megumin"></img>
+          <div class="card-body">
+            <h2 class="card-title">{game.name}</h2>
+            <p class="card-text">Genre: {game.genre}</p>
+            <p class="card-text">Single Player: {game.singlePlayer}</p>
+            <p class="card-text">Multi Player: {game.multiPlayer}</p>
+            <p class="card-text">Platform: {game.platform}</p>
+            <p class="card-text"><small class="text-muted">Release: {game.release}</small></p>
+          </div>
+          </div>
         </div>
       )}
-    </>
+      </div>
   );
 };
 
