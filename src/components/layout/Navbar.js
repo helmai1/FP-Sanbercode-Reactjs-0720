@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
 import {
     HashRouter as Router,
     Switch,
@@ -14,8 +14,15 @@ import GameDetail from '../detail-pages/GameDetail';
 import Manage from '../Manage';
 import Manage2 from '../Manage2';
 import Login from '../Login';
+import { UserContext } from "../context/UserContext";
 
 const Navbar = () => {
+  const [user, setUser] = useContext(UserContext);
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+    history.push("/");
+  };
     return(
         <Router>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,14 +42,21 @@ const Navbar = () => {
                     <li class="nav-item">
                         <Link class="nav-link" to="/game">Game</Link>
                     </li>
+                    {user && (
                     <li class="nav-item">
                         <Link class="nav-link" to="/manage-movies">Manage Movies</Link>
-                    </li>
+                    </li>)}
+                    {user && (
                     <li class="nav-item">
                         <Link class="nav-link" to="/manage-games">Manage Games</Link>
-                    </li>
+                    </li>)}
                 </ul>
+                {user === null && (
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><Link to="/login">Login</Link></button>
+                )}
+                {user && (
+                <button onClick={handleLogout} class="btn btn-outline-danger my-2 my-sm-0" type="submit"><Link to="/login">Logout</Link></button>
+                )}
             </div>
         </nav>
 
